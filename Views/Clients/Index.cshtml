@@ -1,0 +1,64 @@
+﻿@model IEnumerable<Projet_Reservation.Models.Client>
+
+@{
+    ViewBag.Title = "Index";
+}
+<link href="https://bootswatch.com/5/vapor/bootstrap.min.css" rel="stylesheet" />
+
+<h2>Espace Client</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.nom)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.prénom)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CIN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.âge)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.nom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.prénom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CIN)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.âge)
+            </td>
+            <td>
+                <button type="button" class="btn btn-outline-light"> @Html.ActionLink("Reserver vol", "Reserver_vol", new { id = item.id })</button>
+                <button type="button" class="btn btn-outline-light"> @Html.ActionLink("Modifier", "Edit", new { id = item.id })</button>
+                <button type="button" class="btn btn-outline-light">  @Html.ActionLink("Details", "Details", new { id = item.id })</button>
+                <button type="button" class="btn btn-outline-light">@Html.ActionLink("Supprimer", "Delete", new { id = item.id })</button>
+
+
+                
+               
+                
+
+
+            </td>
+        </tr>
+    }
+
+</table>
+<p>
+    <button type="button" class="btn btn-outline-light">@Html.ActionLink("Créer Nouveau", "Create")</button>
+
+    
+</p>

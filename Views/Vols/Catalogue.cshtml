@@ -1,0 +1,59 @@
+﻿@model Projet_Reservation.Models.Vol
+
+@{
+    ViewBag.Title = "Details";
+}
+<link href="https://bootswatch.com/5/vapor/bootstrap.min.css" rel="stylesheet" />
+
+<h2>Catalogue</h2>
+
+<div>
+    <h4>Vol</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nbpmax)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nbpmax)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.destination)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.destination)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.depart)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.depart)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.prix)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.prix)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.arrive)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.arrive)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

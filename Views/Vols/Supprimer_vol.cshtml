@@ -1,0 +1,66 @@
+﻿@model Projet_Reservation.Models.Vol
+
+@{
+    ViewBag.Title = "Delete";
+}
+<link href="https://bootswatch.com/5/vapor/bootstrap.min.css" rel="stylesheet" />
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Vol</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nbpmax)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nbpmax)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.destination)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.destination)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.depart)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.depart)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.prix)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.prix)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.arrive)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.arrive)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

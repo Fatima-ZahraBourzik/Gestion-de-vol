@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Projet_Reservation.Models.Gestionnaire>
+
+@{
+    ViewBag.Title = "Index";
+}
+<link href="https://bootswatch.com/5/vapor/bootstrap.min.css" rel="stylesheet" />
+<h2>Espace Gestionnaire</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.nom)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.secteur)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.nom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.secteur)
+            </td>
+            <td>
+                <button type="button" class="btn btn-outline-light">@Html.ActionLink("Modifier", "Edit", new { id = item.id })</button>
+                <button type="button" class="btn btn-outline-light">@Html.ActionLink("Detail", "Details", new { id = item.id })</button>
+                <button type="button" class="btn btn-outline-light">@Html.ActionLink("Supprimer", "Delete", new { id = item.id })</button>
+
+            </td>
+            <td>
+                <button type="button" class="btn btn-outline-light">@Html.ActionLink("Creer_vol ", "Creer_vol", new { id = item.id })</button>
+                <button type="button" class="btn btn-outline-light">@Html.ActionLink("Modifier_vol", "Modifier_vol", new { id = item.id })</button>
+                <button type="button" class="btn btn-outline-light">@Html.ActionLink("Supprimer_vol", "Supprimer_vol", new { id = item.id })</button>
+
+
+
+
+
+            </td>
+        </tr>
+        
+            }
+
+    </table>
+<p>
+    <button type="button" class="btn btn-outline-light">@Html.ActionLink("Create New", "Create")</button>
+</p>
